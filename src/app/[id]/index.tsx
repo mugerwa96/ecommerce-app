@@ -31,7 +31,8 @@ const Details = () => {
                                         <Text>Loading .....</Text>
                                 </View> :
                                 <View className='flex  h-56 w-[100%] justify-center items-center m bg-white'>
-                                        <Image source={product.images[0]} resizeMode="cover" className="w-[60%] h-[60%]" />
+                                        <Image source={{ uri: product.images[0]}}  resizeMode="cover" className="w-[60%] h-[60%]" />
+                                  
                                         <Text className="font-bold text-md">{product.title}</Text>
                                         <Text>$:{product.price}</Text>
                                 </View>
