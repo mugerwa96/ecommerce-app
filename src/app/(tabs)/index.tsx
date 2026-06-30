@@ -36,7 +36,8 @@ export default function Home() {
               <Link href={`/${item.id}`} asChild>
                 <TouchableOpacity className="w-[48%] h-60 p-8 mb-4 bg-white rounded-lg overflow-hidden">
                   <View >
-                    <Image source={item.images[0]} resizeMode="contain" className="w-[70%] h-[70%]" />
+                    {/* <Image source={item.images[0]} resizeMode="cover" className="w-[70%] h-[70%]" /> */}
+                    <Image source={{ uri: item.images[0]}}  resizeMode="cover" className="w-[70%] h-[70%]" />
                     <View className="p-5">
                       <Text className="font-bold text-md">{item.title}</Text>
                       <Text>$:{item.price}</Text>
