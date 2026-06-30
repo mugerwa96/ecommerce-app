@@ -1,22 +1,27 @@
 // import { Ionicons } from '@expo/vector-icons'
+import { Ionicons } from '@expo/vector-icons'
 import { Tabs } from 'expo-router'
-import { COLORS } from '../../../constants'
 export default function TabLayout() {
         return (
                 <Tabs screenOptions={{
                         headerShown: false,
-                        tabBarActiveTintColor: COLORS.primary,
-                        tabBarInactiveTintColor: "#CDCDE0",
-                        tabBarShowLabel: false,
                         
-                        tabBarStyle:{
-                                backgroundColor:'#fff',
-                                borderTopWidth:1,
-                                height:56,
-                                paddingTop:8
-                        }
+                        tabBarActiveTintColor: '#111111',
+                        tabBarInactiveTintColor: "#CDCDE0",
                 }}>
-                        <Tabs.Screen name='index' />
+                        <Tabs.Screen name='index'
+                                options={{
+                                        tabBarIcon: ({ color, focused }) =>
+                                                <Ionicons name={focused ? 'home' : 'home-outline'} color={color} size={20} />
+                                }}
+                        />
+                        <Tabs.Screen name='cart'
+                                options={{
+                                        tabBarIcon: ({ color, focused }) =>
+                                                <Ionicons name={focused ? 'cart' : 'cart-outline'} color={color} size={20} />
+                                }}
+                        />
+
                 </Tabs>
         )
 }
